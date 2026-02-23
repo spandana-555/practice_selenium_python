@@ -1,0 +1,26 @@
+from selenium import webdriver
+import time
+from selenium.webdriver.common.by import By
+driver=webdriver.Chrome()
+driver.implicitly_wait(10) 
+driver.get("https://parabank.parasoft.com/parabank/index.htm;jsessionid=B6DFDEB4F967BBE9520DBF480087373E")
+register=driver.find_element(By.XPATH,"//a[text()='Register']")
+time.sleep(5)
+register.click()
+time.sleep(5)
+driver.find_element(By.XPATH,"//input[@name='customer.firstName']").send_keys("spandana")
+driver.find_element(By.XPATH,"//input[@name='customer.lastName']").send_keys("pelle")
+driver.find_element(By.XPATH,"//input[@name='customer.address.street']").send_keys("kphb colony")
+driver.find_element(By.XPATH,"//input[@name='customer.address.city']").send_keys("hyderabad")
+driver.find_element(By.XPATH,"//input[@name='customer.address.state']").send_keys("telangana")
+driver.find_element(By.XPATH,"//input[@name='customer.address.zipCode']").send_keys("500072")
+driver.find_element(By.XPATH,"//input[@name='customer.phoneNumber']").send_keys(7013978965)
+driver.find_element(By.XPATH,"//input[@name='customer.ssn']").send_keys("kkr")
+#driver.find_element(By.XPATH,"//input[@name='customer.ssn']").send_keys("")
+driver.find_element(By.XPATH,"//input[@name='customer.username']").send_keys("spandhana")
+driver.find_element(By.XPATH,"//input[@name='customer.password']").send_keys("Spandu@9090")
+driver.find_element(By.XPATH,"//input[@name='repeatedPassword']").send_keys("Spandu@9090")
+driver.find_element(By.XPATH,"//input[@value='Register']").click()
+time.sleep(5)
+
+
