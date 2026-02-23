@@ -22,5 +22,5 @@ driver.find_element(By.XPATH,"//input[@name='customer.password']").send_keys("Sp
 driver.find_element(By.XPATH,"//input[@name='repeatedPassword']").send_keys("Spandu@9090")
 driver.find_element(By.XPATH,"//input[@value='Register']").click()
 time.sleep(5)
-
+print("tc finished")
 
