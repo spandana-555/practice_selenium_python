@@ -1,0 +1,21 @@
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+import time
+from selenium import webdriver
+driver=webdriver.Chrome()
+wait=WebDriverWait(driver,10)
+action=ActionChains(driver)
+driver.get("https://www.saucedemo.com/")
+username=wait.until(EC.visibility_of_element_located((By.XPATH,"//input[@name='user-name']")))
+username.send_keys("standard_user")
+action.key_down(Keys.CONTROL).send_keys('a').key_up(Keys.CONTROL).perform()
+time.sleep(4)
+username.send_keys(Keys.DELETE)
+time.sleep(3)
+username.send_keys("standard_user")
+
+
+
